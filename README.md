@@ -1,2 +1,5 @@
-# Dotfiles
-my arch dotfiles
+# My Arch Dotfiles
+-------------------
+
+## Prequisitories
+
