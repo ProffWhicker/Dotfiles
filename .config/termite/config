@@ -2,52 +2,52 @@
 font = Mononoki Nerd Font 12
 
 [colors]
-# Base16 Monokai
-# Author: Wimer Hazenberg (http://www.monokai.nl)
+# Base16 Material Palenight
+# Author: Nate Peterson
 
-foreground          = #f8f8f2
-foreground_bold     = #f8f8f2
-cursor              = #f8f8f2
-cursor_foreground   = #272822
-background          = rgba(39, 40, 34, 0.8)
+foreground          = #FEFEFE
+foreground_bold     = #FEFEFE
+cursor              = #FEFEFE
+cursor_foreground   = #FEFEFE
+background = rgba(12, 13, 22, 0.95)
 
 # 16 color space
 
 # Black, Gray, Silver, White
-color0  = #272822
-color8  = #75715e
-color7  = #f8f8f2
-color15 = #f9f8f5
+color0  = #2A2C3A
+color8  = #FEFEFE
+color7  = #FEFEFE
+color15 = #FEFEFE
 
 # Red
-color1  = #f92672
-color9  = #f92672
+color1  = #EC71A9
+color9  = #EC71A9
 
 # Green
-color2  = #a6e22e
-color10 = #a6e22e
+color2  = #BAE485
+color10 = #BAE485
 
 # Yellow
-color3  = #f4bf75
-color11 = #f4bf75
+color3  = #FFD269
+color11 = #FFD269
 
 # Blue
-color4  = #66d9ef
-color12 = #66d9ef
+color4  = #7DDCEF
+color12 = #7DDCEF
 
 # Purple
-color5  = #ae81ff
-color13 = #ae81ff
+color5  = #FF967A
+color13 = #FF967A
 
 # Teal
-color6  = #a1efe4
-color14 = #a1efe4
+color6  = #89CFE8
+color14 = #89CFE8
 
 # Extra colors
-color16 = #fd971f
-color17 = #cc6633
-color18 = #383830
-color19 = #49483e
-color20 = #a59f85
-color21 = #f5f4f1
+color16 = #EC71A9
+color17 = #EC71A9
+color18 = #7DDCEF
+color19 = #3B4254
+color20 = #929AAA
+color21 = #89CFE8
 
