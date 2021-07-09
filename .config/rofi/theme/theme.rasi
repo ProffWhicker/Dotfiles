@@ -1,5 +1,5 @@
 configuration {
-    font            : "FiraCode Nerd Font Medium 12";
+    font            : "CaskaydiaCove Nerd Font 10";
     display-ssh     : "";
     display-run     : "";
     display-drun    : "";
@@ -8,11 +8,11 @@ configuration {
 
 }
 * {
-    bg-color            : #100C09;
-    bg-light-color      : #5B6372;
-    fg-color            : #EAE8D8;
-    accent-color        : #EEFCFBFA;
-    urgent-color        : #ebcb8b;
+    bg-color            : #262727;
+    bg-light-color      : #a89984;
+    fg-color            : #ddc7a1;
+    accent-color        : #ddc7a1;
+    urgent-color        : #ddc7a1;
 
     background-color    : @bg-color;
     text-color          : @fg-color;
@@ -24,7 +24,9 @@ configuration {
     y-offset            : -160;
     width               : 480;
     background-color    : @bg-color;
-    border-radius       : 20px;
+	border-color		: @bg-light-color;
+	border				: 2px 2px 2px 2px;
+	border-radius		: 10px;
 }
 #mainbox {
     spacing             : 0;

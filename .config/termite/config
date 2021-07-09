@@ -1,53 +1,44 @@
 [options]
-font = Mononoki Nerd Font 12
+font = CaskaydiaCove Nerd Font Bold 10
 
 [colors]
 # Base16 Material Palenight
 # Author: Nate Peterson
 
-foreground          = #FEFEFE
-foreground_bold     = #FEFEFE
-cursor              = #FEFEFE
-cursor_foreground   = #FEFEFE
-background = rgba(12, 13, 22, 0.95)
+foreground          = #ddc7a1
+foreground_bold     = #ddc7a1
+cursor              = #ddc7a1
+cursor_foreground   = rgba(38, 39, 39, 0.75)
+background          = rgba(38, 39, 39, 0.75)
 
 # 16 color space
 
 # Black, Gray, Silver, White
-color0  = #2A2C3A
-color8  = #FEFEFE
-color7  = #FEFEFE
-color15 = #FEFEFE
+color0  = #101010
+color8  = #a89984
+color7  = #a89984
+color15 = #FFFFFF
 
 # Red
-color1  = #EC71A9
-color9  = #EC71A9
+color1  = #ea6962
+color9  = #ea6962
 
 # Green
-color2  = #BAE485
-color10 = #BAE485
+color2  = #a9b665
+color10 = #a9b665
 
 # Yellow
-color3  = #FFD269
-color11 = #FFD269
+color3  = #d8a657
+color11 = #d8a657
 
 # Blue
-color4  = #7DDCEF
-color12 = #7DDCEF
+color4  = #7daea3
+color12 = #7daea3
 
 # Purple
-color5  = #FF967A
-color13 = #FF967A
+color5  = #d3869b
+color13 = #d3869b
 
 # Teal
-color6  = #89CFE8
-color14 = #89CFE8
-
-# Extra colors
-color16 = #EC71A9
-color17 = #EC71A9
-color18 = #7DDCEF
-color19 = #3B4254
-color20 = #929AAA
-color21 = #89CFE8
-
+color6  = #89b482
+color14 = #e78a4e

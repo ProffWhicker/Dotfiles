@@ -26,22 +26,21 @@ format-margin =
 format-offset =
 
 [colors]
-bg = #0C0D16
-fg = #FEFEFE
-or = #FF967A
-bl = #7DDCEF
-gr = #FEFEFE
+bg  = #E6262727
+bg1 = #E6101010
+fg  = #ddc7a1
+gr  = #a9b665
 
-[bar/bot-bar]
+[bar/main]
 monitor = ${env:MONITOR}
 monitor-strict = false
 override-redirect = true
 bottom = true
 fixed-center = true
-width = 30%
-height = 35
-offset-x = 35%
-offset-y = 3
+width = 100%
+height = 23
+offset-x = 0
+offset-y = 0
 
 background = ${colors.bg}
 foreground = ${colors.fg}
@@ -50,112 +49,24 @@ radius = 0
 line-size = 2
 line-color = #000000
 
-border-size = 1
-border-color = ${colors.gr}
+underline-size = 3
+overline-size  = 3
 
-padding-left = 0
-padding-right = 0
+border-size = 0
+border-color = ${colors.fg}
 
-font-0 = "SourceCodePro:pixelsize=12;3"
-font-1 = "Mononoki Nerd Font:pixelsize=19;4"
+padding-left = 1
+padding-right = 1
 
-modules-center = workspaces
+font-0 = "CaskaydiaCove Nerd Font:pixelsize=11;3"
 
-separator = 
-
-;dim-value = 1.0
-
-#i3: Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-[bar/topr-bar]
-monitor = ${env:MONITOR}
-monitor-strict = false
-override-redirect = true
-bottom = false
-fixed-center = true
-width = 30%
-height = 35
-offset-x = 68%
-offset-y = 7
-
-background = ${colors.bg}
-foreground = ${colors.fg}
-
-radius = 0
-line-size = 2
-line-color = #000000
-
-border-size = 1
-border-color = ${colors.gr}
-
-padding-left = 0
-padding-right = 0
-
-font-0 = "SourceCodePro:pixelsize=12;3"
-font-1 = "Mononoki Nerd Font:pixelsize=19;4"
-
-modules-center = vol separator player
+modules-left   = left ewmh right
+modules-center = 
+modules-right  = left vol right seperator left memory right seperator left cpu right seperator left time right seperator
 
 separator = 
 
-;dim-value = 1.0
-
-#i3: Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
 enable-ipc = true
-
-[bar/topl-bar]
-monitor = ${env:MONITOR}
-monitor-strict = false
-override-redirect = true
-bottom = false
-fixed-center = true
-width = 10%
-height = 35
-offset-x = 2%
-offset-y = 7
-
-background = ${colors.bg}
-foreground = ${colors.fg}
-
-radius = 0
-
-line-size = 2
-line-color = #000000
-
-border-size = 1
-border-color = ${colors.gr}
-
-padding-left = 0
-padding-right = 0
-
-font-0 = "SourceCodePro:pixelsize=12;3"
-font-1 = "Mononoki Nerd Font:pixelsize=19;4"
-
-modules-center = time
-
-separator = 
-
-;dim-value = 1.0
-
-#i3: Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
 
 ################################################################################
 
@@ -204,14 +115,20 @@ animation-charging-framerate = 750
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-foreground = ${colors.fg1}
+format-foreground = ${colors.gr}
 format-background = ${colors.bg1}
 
 label-font = 1
 
 format = <label>
 
-label = Cpu %percentage:3%%
+label = %percentage:3%%
+
+format-prefix = CPU:
+format-prefix-foreground = ${colors.fg}
+
+format-underline = ${colors.bg}
+format-overline  = ${colors.bg}
 
 ################################################################################
 
@@ -219,9 +136,12 @@ label = Cpu %percentage:3%%
 type = internal/date
 interval = 5
 time = %l:%M%p
-format-foreground = ${colors.fg}
-format-background = ${colors.bg}
-label = "%time% "
+format-foreground = ${colors.gr}
+format-background = ${colors.bg1}
+label = "%time%"
+
+format-underline = ${colors.bg}
+format-overline  = ${colors.bg}
 
 #################################################################
 
@@ -237,25 +157,28 @@ format = <label-state>
 label-monitor = %name%
 
 label-active = %name%
-label-active-foreground = ${colors.or}
-label-active-background = ${colors.bg}
+label-active-foreground = ${colors.gr}
+label-active-background = ${colors.bg1}
 label-active-padding = 1
 
 label-occupied = %name%
-label-occupied-background = ${colors.bg}
+label-occupied-background = ${colors.bg1}
 label-occupied-padding = 1
 
 label-urgent = %name%
-label-urgent-foreground = #ffffff
-label-urgent-background = ${colors.bg}
+label-urgent-foreground = ${colors.fg}
+label-urgent-background = ${colors.bg1}
 label-urgent-padding = 1
 
 label-empty = %name%
-label-empty-foreground = #ffffff
-label-empty-background = ${colors.bg}
+label-empty-foreground = ${colors.fg}
+label-empty-background = ${colors.bg1}
 label-empty-padding = 1
-format-foreground = #ffffff
+format-foreground = ${colors.fg}
 format-background = ${colors.bg1}
+
+format-underline = ${colors.bg}
+format-overline  = ${colors.bg}
 
 ################################################################################
 
@@ -264,50 +187,15 @@ type = internal/memory
 interval = 1
 label = %gb_used%
 
-format = Mem <label>
-format-foreground = ${colors.fg2}
-format-background = ${colors.bg2}
+format = <label>
+format-foreground = ${colors.gr}
+format-background = ${colors.bg1}
 
+format-prefix = Mem: 
+format-prefix-foreground = ${colors.fg}
 
-################################################################################
-
-[module/mpd]
-;https://github.com/jaagr/polybar/wiki/Module:-mpd
-type = internal/mpd
-;format-online =  "<label-song>   <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
-format-online =  "<label-song>  <bar-progress>"
-;format-online =  "<label-song>  <bar-progress> <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-label-song-maxlen = 40
-label-song-ellipsis = true
-bar-progress-width = 10
-bar-progress-indicator = 
-bar-progress-fill = 
-bar-progress-empty = 
-bar-progress-fill-foreground = #ff0
-bar-progress-fill-background = ${colors.background}
-bar-progress-indicator-foreground = ${colors.color2}
-format-online-foreground = ${colors.color2}
-format-online-background = ${colors.background}
-
-################################################################################
-
-[module/vol]
-type = internal/pulseaudio
-format-volume = Vol: <label-volume>
-format-muted = <label-muted>
-label-volume = %percentage%%
-label-muted = Muted
-format-volume-background = ${colors.bg}
-format-volume-foreground = ${colors.fg}
-format-volume-padding = 1
-format-muted-background = ${colors.bg}
-format-muted-foreground = ${colors.fg}
-format-muted-padding = 1
+format-underline = ${colors.bg}
+format-overline  = ${colors.bg}
 
 ################################################################################
 
@@ -317,83 +205,78 @@ text = " "
 
 ################################################################################
 
-[module/workspaces]
-type = internal/xworkspaces
+[module/vol]
+type = internal/pulseaudio
 
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
-pin-workspaces = true
+sink = alsa_output.pci-0000_03_00.6.analog-stereo
 
-; Create click handler used to focus desktop
-; Default: true
-enable-click = true
+use-ui-max = false
 
-; Create scroll handlers used to cycle desktops
-; Default: true
-enable-scroll = true
+; Default: 5
+interval = 5
 
-; icon-[0-9]+ = <desktop-name>;<icon>
-; NOTE: The desktop name needs to match the name configured by the WM
-; You can get a list of the defined desktops using:
-; $ xprop -root _NET_DESKTOP_NAMES
-icon-0 = 1;
-icon-1 = 2;
-icon-2 = 3;
-icon-3 = 4;
-icon-4 = 5;
-icon-default = 
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.bg1}
+format-volume-foreground = ${colors.fg}
+format-volume-padding = 2
 
+format-muted = <label-muted>
+format-muted-prefix = 
+format-muted-prefix-font = 2
+format-muted-background = ${colors.bg1}
+format-muted-padding = 2
 
-; Available tags:
-;   <label-monitor>
-;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
-; Default: <label-state>
-format = <label-state>
-format-padding = 1
+label-volume = %percentage%%
+label-volume-foreground = ${colors.gr}
+
+label-muted = " Muted"
+label-muted-foreground = ${color.gr}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+format-volume-underline = ${colors.bg}
+format-volume-overline  = ${colors.bg}
+
+format-muted-underline  = ${colors.bg}
+format-muted-overline   = ${colors.bg}
+
+################################################################################
+
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+format-prefix = "Song: "
+format = <label>
+exec = sh ~/.config/polybar/scripts/scroll_spotify_status.sh
+
 format-background = ${colors.bg}
+format-foreground = ${colors.gr}
 
-; Available tokens:
-;   %name%
-; Default: %name%
-label-monitor = %name%
+format-prefix-foreground = ${colors.fg}
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-active = 
-label-active-foreground = ${colors.or}
+################################################################################
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-occupied = 
-label-occupied-foreground = ${colors.bl}
+[module/seperator]
+type = custom/text
+content = " "
+content-background = ${colors.bg}
+content-foreground = ${colors.fg}
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-urgent = 
-label-urgent-foreground = ${colors.bl}
+[module/left]
+type = custom/text
+content-foreground = ${colors.bg1}
+content-background = ${colors.bg}
+content-overline = ${colors.bg}
+content-underline = ${colors.bg}
+content = ""
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-empty = 
-label-empty-foreground = ${colors.bl}
-
-label-active-padding = 1
-label-urgent-padding = 1
-label-occupied-padding = 1
-label-empty-padding = 1
+[module/right]
+type = custom/text
+content-foreground = ${colors.bg1}
+content-background = ${colors.bg}
+content-overline = ${colors.bg}
+content-underline = ${colors.bg}
+content = ""
