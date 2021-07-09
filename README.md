@@ -2,4 +2,6 @@
 -------------------
 
 ## Prequisitories
+Markup: 
+	* bspwm
 
